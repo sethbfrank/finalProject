@@ -1,0 +1,14 @@
+{
+    "java.dependency.packagePresentation": "hierarchical",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\sethb\\OneDrive\\Documents\\Coding\\javafx-sdk-11.0.2\\lib\\javafx.controls.jar",
+        "c:\\Users\\sethb\\OneDrive\\Documents\\Coding\\javafx-sdk-11.0.2\\lib\\javafx.base.jar",
+        "c:\\Users\\sethb\\OneDrive\\Documents\\Coding\\javafx-sdk-11.0.2\\lib\\javafx.fxml.jar",
+        "c:\\Users\\sethb\\OneDrive\\Documents\\Coding\\javafx-sdk-11.0.2\\lib\\javafx.graphics.jar",
+        "c:\\Users\\sethb\\OneDrive\\Documents\\Coding\\javafx-sdk-11.0.2\\lib\\javafx.media.jar",
+        "c:\\Users\\sethb\\OneDrive\\Documents\\Coding\\javafx-sdk-11.0.2\\lib\\javafx.swing.jar",
+        "c:\\Users\\sethb\\OneDrive\\Documents\\Coding\\javafx-sdk-11.0.2\\lib\\javafx.web.jar",
+        "c:\\Users\\sethb\\OneDrive\\Documents\\Coding\\javafx-sdk-11.0.2\\lib\\javafx-swt.jar"
+    ]
+}
