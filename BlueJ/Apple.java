@@ -1,33 +1,23 @@
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
-/**
- * Write a description of class Apple here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
-public class Apple extends Interactions
-{
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Apple
-     */
-    public Apple()
-    {
-        // initialise instance variables
-        x = 0;
+public class Apple {
+    public static final int blockSize = 40;
+    Rectangle apple;
+    
+    public Apple() {
+        apple = new Rectangle( blockSize, blockSize, Color.RED);
+    }    
+    
+    public void setApple() {
+        apple.setX((Math.random() * (1280 - blockSize)));
+        apple.setY((Math.random() * (720 - blockSize)));
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    public Rectangle returnRectangle()
     {
-        // put your code here
-        return x + y;
+        return apple;
     }
+
+    
 }

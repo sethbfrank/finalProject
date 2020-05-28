@@ -1,33 +1,32 @@
+import javafx.collections.ObservableList;
+import javafx.scene.Group;
+import javafx.scene.Node;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
-/**
- * Write a description of class Snake here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
-public class Snake
-{
-    // instance variables - replace the example below with your own
-    private int x;
+public class Snake {
+    private static final int blockSize = 40;
+    private Group snakeBody;
+    private static final Rectangle rectangle = new Rectangle( blockSize, blockSize, Color.RED);
+    private ObservableList<Node> snake;
 
-    /**
-     * Constructor for objects of class Snake
-     */
-    public Snake()
-    {
-        // initialise instance variables
-        x = 0;
+    public Snake(){
+        snakeBody = new Group();
+        snake = snakeBody.getChildren();
+
+        Rectangle rect1 = rectangle;
+        Rectangle rect2 = rectangle;
+        rect1.setX(250);
+        rect1.setY(250);
+        snake.add(rect1);
+        snake.add(rect2);
+
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    public Group returnSnake()
     {
-        // put your code here
-        return x + y;
+        return snakeBody;
     }
+
+
 }
