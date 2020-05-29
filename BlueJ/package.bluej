@@ -1,4 +1,13 @@
 #BlueJ package file
+dependency1.from=Main
+dependency1.to=Apple
+dependency1.type=UsesDependency
+dependency2.from=Apple
+dependency2.to=Main
+dependency2.type=UsesDependency
+dependency3.from=Snake
+dependency3.to=Main
+dependency3.type=UsesDependency
 editor.fx.0.height=739
 editor.fx.0.width=816
 editor.fx.0.x=552
@@ -13,7 +22,7 @@ package.editor.x=34
 package.editor.y=220
 package.frame.height=600
 package.frame.width=800
-package.numDependencies=0
+package.numDependencies=3
 package.numTargets=7
 package.showExtends=true
 package.showUses=true

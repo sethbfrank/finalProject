@@ -2,10 +2,10 @@
     "configurations": [
         {
             "type": "java",
-            "name": "CodeLens (Launch) - Board",
+            "name": "CodeLens (Launch) - Main",
             "request": "launch",
             "vmArgs": "--module-path C:\\Users\\sethb\\OneDrive\\Documents\\Coding\\javafx-sdk-11.0.2\\lib --add-modules javafx.controls,javafx.fxml",
-            "mainClass": "Board",
+            "mainClass": "Main",
             "projectName": "VSCode_95996e50"
         }
     ]

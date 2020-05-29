@@ -5,9 +5,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class Snake {
-    private static final int blockSize = 40;
     private Group snakeBody;
-    private static final Rectangle rectangle = new Rectangle( blockSize, blockSize, Color.RED);
+    private static final Rectangle rectangle = new Rectangle( Main.blockSize, Main.blockSize, Color.BLUE);
     private ObservableList<Node> snake;
 
     public Snake(){
