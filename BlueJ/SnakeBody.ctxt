@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=SnakeBody
+comment1.params=x\ y
+comment1.target=SnakeBody(int,\ int)
+comment2.params=
+comment2.target=javafx.scene.shape.Rectangle\ returnSnake()
+numComments=3

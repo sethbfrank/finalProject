@@ -10,7 +10,6 @@ public class Apple {
         apple.setY((Math.random() * (720 - Main.blockSize)));
     }    
     
-    
 
     public Rectangle returnApple()
     {

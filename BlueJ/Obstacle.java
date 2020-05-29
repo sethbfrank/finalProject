@@ -1,33 +1,30 @@
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
-/**
- * Write a description of class Obstacle here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
-public class Obstacle extends Interactions
-{
-    // instance variables - replace the example below with your own
-    private int x;
 
-    /**
-     * Constructor for objects of class Obstacle
-     */
-    public Obstacle()
-    {
-        // initialise instance variables
-        x = 0;
+public class Obstacle {
+    Rectangle obstacle;
+    
+    public Obstacle() {
+        obstacle = new Rectangle(Main.blockSize, Main.blockSize, Color.WHITE);
+        obstacle.setX((Math.random() * (1280 - Main.blockSize)));
+        obstacle.setY((Math.random() * (720 - Main.blockSize)));
+    }    
+
+    public double changeX(){
+        double x = (Math.random() * (1280 - Main.blockSize));
+        obstacle.setX(x);
+        return x;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    public double changeY(){
+        double y = (Math.random() * (720 - Main.blockSize));
+        obstacle.setY(y);
+        return y;
+    }
+    
+    public Rectangle returnObstacle()
     {
-        // put your code here
-        return x + y;
+        return obstacle;
     }
 }
+    
