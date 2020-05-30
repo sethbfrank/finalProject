@@ -1,3 +1,5 @@
+//this class is not used in the application but here for testing JavaFX
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
