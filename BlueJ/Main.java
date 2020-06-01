@@ -15,8 +15,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 //import sun.swing.MenuItemLayoutHelper.RectSize;
 import javafx.util.Duration;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class Main extends Application {
 
@@ -31,11 +29,12 @@ public class Main extends Application {
     private Group snake;
     private Direction direction = Direction.RIGHT;
     private Timeline timeline = new Timeline();
+    private int tail;
+    private boolean up, down, left, right = false;
 
     private Apple apple;
     private Obstacle obstacle;
-    private Timer timer;
-    private TimerTask task;
+    private int ticks = 0;
     
 
     public static void main(String[] args) {
@@ -44,32 +43,36 @@ public class Main extends Application {
 
     public Parent createContent(){
         Group root = new Group();
-        timer = new Timer();
         snake = new Group();
         apple = new Apple();
         obstacle = new Obstacle();
-        //task = new TimerTask(obstacle.changeX() && obstacle.changeY());
-        //timer.scheduleAtFixedRate(task,5000, 5000);
-        
-        //snake = new ArrayList<>();
-        //snake.add(new SnakeBody(250,250));
         
         
         KeyFrame frame = new KeyFrame(Duration.seconds(0.2), event -> {
+            ticks++;
+            if(ticks%25 == 0){
+            }
+
+
+            tail = snake.getChildren().size() - 1;
             //the actual moving aspect of the snake
             if(direction == Direction.RIGHT) {
+                right = true;
                 newX = newX + 40;
                 snake.setTranslateX(newX);
             }
             else if(direction == Direction.LEFT) {
+                left = true;
                 newX = newX - 40;
                 snake.setTranslateX(newX);
             }
             else if(direction == Direction.UP) {
+                up = true;
                 newY = newY - 40;
                 snake.setTranslateY(newY);
             }
             else if(direction == Direction.DOWN) {
+                down = true;
                 newY = newY + 40;
                 snake.setTranslateY(newY);
             }
@@ -81,7 +84,9 @@ public class Main extends Application {
         timeline.setCycleCount(Timeline.INDEFINITE);
 
         root.getChildren().add(apple.returnApple());
-        //root.getChildren().add(snake);
+        
+
+
         BodyPart snakeBody = new BodyPart(240, 240);
         BodyPart snakeBody1 = new BodyPart(200, 240);
         snake.getChildren().add(snakeBody.addBodyPart());

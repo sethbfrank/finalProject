@@ -1,19 +1,23 @@
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-public class Apple {
-    Rectangle apple;
+public class Apple extends Interactions{
     
     public Apple() {
-        apple = new Rectangle(Main.blockSize, Main.blockSize, Color.RED);
-        apple.setX((Math.random() * (1280 - Main.blockSize)));
-        apple.setY((Math.random() * (720 - Main.blockSize)));
+        super(Main.blockSize, Main.blockSize, Color.RED);
     }    
-    
+
+    public double changeX(){
+        return super.changeX();
+    }
+
+    public double changeY(){
+        return super.changeY();
+    }
 
     public Rectangle returnApple()
     {
-        return apple;
+        return super.returnObject();
     }
 
     

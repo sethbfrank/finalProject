@@ -1,3 +1,13 @@
 #BlueJ class context
 comment0.target=Interactions
-numComments=1
+comment1.params=
+comment1.target=Interactions()
+comment2.params=x\ y\ color
+comment2.target=Interactions(int,\ int,\ javafx.scene.paint.Color)
+comment3.params=
+comment3.target=double\ changeX()
+comment4.params=
+comment4.target=double\ changeY()
+comment5.params=
+comment5.target=javafx.scene.shape.Rectangle\ returnObject()
+numComments=6

@@ -2,29 +2,23 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 
-public class Obstacle {
-    Rectangle obstacle;
+public class Obstacle extends Interactions{
     
     public Obstacle() {
-        obstacle = new Rectangle(Main.blockSize, Main.blockSize, Color.WHITE);
-        obstacle.setX((Math.random() * (1280 - Main.blockSize)));
-        obstacle.setY((Math.random() * (720 - Main.blockSize)));
+        super(Main.blockSize, Main.blockSize, Color.WHITE);
     }    
 
     public double changeX(){
-        double x = (Math.random() * (1280 - Main.blockSize));
-        obstacle.setX(x);
-        return x;
+        return super.changeX();
     }
+
     public double changeY(){
-        double y = (Math.random() * (720 - Main.blockSize));
-        obstacle.setY(y);
-        return y;
+        return super.changeY();
     }
     
     public Rectangle returnObstacle()
     {
-        return obstacle;
+        return super.returnObject();
     }
 }
     
