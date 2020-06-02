@@ -1,36 +1,58 @@
-import java.util.Random;
-
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
 public class Interactions {
-    private Rectangle object;
+    private Rectangle rectangle;
+    private Circle circle;
+    private boolean isRectangle;
     
     public Interactions() {
-        object = new Rectangle(Main.blockSize, Main.blockSize, Color.WHITE);;
-        object.setX((Math.random() * (1280 - Main.blockSize)));
-        object.setY((Math.random() * (720 - Main.blockSize)));
+        rectangle = new Rectangle(Main.blockSize, Main.blockSize, Color.WHITE);;
+        rectangle.setX((Math.random() * (1280 - Main.blockSize)));
+        rectangle.setY((Math.random() * (720 - Main.blockSize)));
     }
 
-    public Interactions(int x, int y, Color color) {
-        object = new Rectangle(x,y,color);
-        object.setX((Math.random() * (1280 - Main.blockSize)));
-        object.setY((Math.random() * (720 - Main.blockSize)));
+    public Interactions(int x, int y, Color color, boolean isRectangle) {
+        this.isRectangle = isRectangle;
+        if(isRectangle) {
+            rectangle = new Rectangle(x,y,color);
+            rectangle.setX(1080);
+            rectangle.setY(240);
+        }else{
+            circle = new Circle(x,y,Main.blockSize/2,color);
+            circle.setCenterX(900);
+            circle.setCenterY(260);
+        }
     }
 
     public double changeX() {
-        double x = (Math.random() * (1280 - Main.blockSize));
-        object.setX(x);
+        int x = (int)(Math.random() * (1280 - Main.blockSize));
+        x = x/Main.blockSize*Main.blockSize;
+        if(isRectangle)
+            rectangle.setX(x);
+        else
+            circle.setCenterX(x + Main.blockSize/2);
         return x;
     }
 
     public double changeY(){
-        double y = (Math.random() * (720 - Main.blockSize));
-        object.setY(y);
+        int y = (int)(Math.random() * (720 - Main.blockSize));
+        y = y/Main.blockSize*Main.blockSize;
+        System.out.println(y);
+        if(isRectangle)
+            rectangle.setY(y);
+        else
+            circle.setCenterY(y + Main.blockSize/2);
         return y;
     }
 
-    public Rectangle returnObject(){
-        return object;
+    public Rectangle returnRectangle(){
+        return rectangle;
     }
+
+    public Circle returnCircle() {
+        return circle;
+    }
+        
 }

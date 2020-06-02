@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -29,8 +30,8 @@ public class Main extends Application {
     private Group snake;
     private Direction direction = Direction.RIGHT;
     private Timeline timeline = new Timeline();
-    private int tail;
-    private boolean up, down, left, right = false;
+    private Node tail;
+    private boolean up = false, down = false, left = false, right = false;
 
     private Apple apple;
     private Obstacle obstacle;
@@ -48,34 +49,79 @@ public class Main extends Application {
         obstacle = new Obstacle();
         
         
+        
         KeyFrame frame = new KeyFrame(Duration.seconds(0.2), event -> {
             ticks++;
             if(ticks%25 == 0){
+                obstacle.changeX();
+                obstacle.changeY();
+            }
+            if(ticks == 2147483647) {
+                ticks = 0;
             }
 
-
-            tail = snake.getChildren().size() - 1;
+            tail = snake.getChildren().get(snake.getChildren().size() - 1);
             //the actual moving aspect of the snake
+            
+            //need to utilize methods in BodyPart class to make this work
             if(direction == Direction.RIGHT) {
                 right = true;
                 newX = newX + 40;
-                snake.setTranslateX(newX);
+                
+                tail.setTranslateX(snake.getChildren().get(0).getTranslateX()+blockSize);
+                tail.setTranslateY(snake.getChildren().get(0).getTranslateY());
+                snake.getChildren().remove(snake.getChildren().size() - 1);
+                snake.getChildren().add(0, tail);
             }
             else if(direction == Direction.LEFT) {
                 left = true;
                 newX = newX - 40;
-                snake.setTranslateX(newX);
+                tail.setTranslateX(snake.getChildren().get(0).getTranslateX()-blockSize);
+                tail.setTranslateY(snake.getChildren().get(0).getTranslateY());
+                snake.getChildren().remove(snake.getChildren().size() - 1);
+                snake.getChildren().add(0, tail);
             }
             else if(direction == Direction.UP) {
                 up = true;
                 newY = newY - 40;
-                snake.setTranslateY(newY);
+                tail.setTranslateY(snake.getChildren().get(0).getTranslateY()-blockSize);
+                tail.setTranslateX(snake.getChildren().get(0).getTranslateX());
+                snake.getChildren().remove(snake.getChildren().size() - 1);
+                snake.getChildren().add(0, tail);
             }
             else if(direction == Direction.DOWN) {
                 down = true;
                 newY = newY + 40;
-                snake.setTranslateY(newY);
+                tail.setTranslateY(snake.getChildren().get(0).getTranslateY()+blockSize);
+                tail.setTranslateX(snake.getChildren().get(0).getTranslateX());
+                snake.getChildren().remove(snake.getChildren().size() - 1);
+                snake.getChildren().add(0, tail);
             }
+
+
+
+
+
+            // if(direction == Direction.RIGHT) {
+            //     right = true;
+            //     newX = newX + 40;
+            //     snake.setTranslateX(newX);
+            // }
+            // else if(direction == Direction.LEFT) {
+            //     left = true;
+            //     newX = newX - 40;
+            //     snake.setTranslateX(newX);
+            // }
+            // else if(direction == Direction.UP) {
+            //     up = true;
+            //     newY = newY - 40;
+            //     snake.setTranslateX(newY);
+            // }
+            // else if(direction == Direction.DOWN) {
+            //     down = true;
+            //     newY = newY + 40;
+            //     snake.setTranslateY(newY);
+            //}
 
         });
 
@@ -83,7 +129,8 @@ public class Main extends Application {
         timeline.getKeyFrames().add(frame);
         timeline.setCycleCount(Timeline.INDEFINITE);
 
-        root.getChildren().add(apple.returnApple());
+        root.getChildren().add(apple.returnCircle());
+        root.getChildren().add(obstacle.returnRectangle());
         
 
 
