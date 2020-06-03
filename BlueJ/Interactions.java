@@ -6,6 +6,8 @@ public class Interactions {
     private Rectangle rectangle;
     private Circle circle;
     private boolean isRectangle;
+    //private double x;
+    //private double y;
     
     public Interactions() {
         rectangle = new Rectangle(Main.blockSize, Main.blockSize, Color.WHITE);;
@@ -33,17 +35,18 @@ public class Interactions {
             rectangle.setX(x);
         else
             circle.setCenterX(x + Main.blockSize/2);
+        //this.x = x;
         return x;
     }
 
     public double changeY(){
         int y = (int)(Math.random() * (720 - Main.blockSize));
         y = y/Main.blockSize*Main.blockSize;
-        System.out.println(y);
         if(isRectangle)
             rectangle.setY(y);
         else
             circle.setCenterY(y + Main.blockSize/2);
+        //this.y = y;
         return y;
     }
 
@@ -54,5 +57,11 @@ public class Interactions {
     public Circle returnCircle() {
         return circle;
     }
-        
+    // public double getX(){
+    //     return this.x;
+    // }
+      
+    // public double getY(){
+    //     return this.y;
+    // }
 }

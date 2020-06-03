@@ -1,13 +1,13 @@
 #BlueJ class context
 comment0.target=BodyPart
 comment1.params=x\ y
-comment1.target=BodyPart(int,\ int)
+comment1.target=BodyPart(double,\ double)
 comment2.params=
 comment2.target=javafx.scene.shape.Rectangle\ addBodyPart()
 comment3.params=
-comment3.target=int\ getX()
+comment3.target=double\ getX()
 comment4.params=
-comment4.target=int\ getY()
+comment4.target=double\ getY()
 comment5.params=x
 comment5.target=int\ changeX(int)
 comment6.params=y

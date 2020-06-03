@@ -7,10 +7,10 @@ import javafx.scene.shape.Rectangle;
 public class BodyPart {
 
     private Rectangle bodyPart;
-    private int x;
-    private int y;
+    private double x;
+    private double y;
 
-    public BodyPart(int x, int y){
+    public BodyPart(double x, double y){
         bodyPart = new Rectangle(Main.blockSize, Main.blockSize, Color.GREEN);
         bodyPart.setX(x);
         bodyPart.setY(y);
@@ -23,11 +23,11 @@ public class BodyPart {
         return bodyPart;
     }
 
-    public int getX(){
+    public double getX(){
         return x;
     }
 
-    public int getY(){
+    public double getY(){
         return y;
     }
 
