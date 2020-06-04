@@ -18,7 +18,7 @@ public class BodyPart {
         this.y = y;
     }
 
-    public Rectangle addBodyPart()
+    public Rectangle getBodyPart()
     {
         return bodyPart;
     }
@@ -31,13 +31,13 @@ public class BodyPart {
         return y;
     }
 
-    public int changeX(int x){
+    public double changeX(double x){
         bodyPart.setTranslateX(x);
         this.x = x;
         return x;
     }
 
-    public int changeY(int y){
+    public double changeY(double y){
         bodyPart.setTranslateX(y);
         this.y = y;
         return y;
