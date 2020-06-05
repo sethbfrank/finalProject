@@ -1,6 +1,3 @@
-import javafx.collections.ObservableList;
-import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
@@ -10,7 +7,7 @@ public class BodyPart {
     private double x;
     private double y;
 
-    public BodyPart(double x, double y){
+    public BodyPart(double x, double y) {
         bodyPart = new Rectangle(Main.blockSize, Main.blockSize, Color.GREEN);
         bodyPart.setX(x);
         bodyPart.setY(y);
@@ -18,30 +15,27 @@ public class BodyPart {
         this.y = y;
     }
 
-    public Rectangle getBodyPart()
-    {
+    public Rectangle getBodyPart() {
         return bodyPart;
     }
-
-    public double getX(){
+    
+    public double getX() {
         return x;
     }
 
-    public double getY(){
+    public double getY() {
         return y;
     }
 
-    public double changeX(double x){
-        bodyPart.setTranslateX(x);
+    public double changeX(double x) {
+        bodyPart.setX(x);
         this.x = x;
         return x;
     }
 
-    public double changeY(double y){
-        bodyPart.setTranslateX(y);
+    public double changeY(double y) {
+        bodyPart.setY(y);
         this.y = y;
         return y;
     }
-
-
 }

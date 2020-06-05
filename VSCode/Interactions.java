@@ -43,7 +43,7 @@ public class Interactions {
         return x;
     }
 
-    public double changeY(){
+    public double changeY() {
         int y = (int)(Math.random() * (720 - Main.blockSize));
         y = y/Main.blockSize*Main.blockSize;
         if(isRectangle)
@@ -54,18 +54,18 @@ public class Interactions {
         return y;
     }
 
-    public Rectangle returnRectangle(){
+    public Rectangle returnRectangle() {
         return rectangle;
     }
 
     public Circle returnCircle() {
         return circle;
     }
-    public double getX(){
-        return this.x;
+    public double getX() {
+        return x;
     }
       
-    public double getY(){
-        return this.y;
+    public double getY() {
+        return y;
     }
 }
