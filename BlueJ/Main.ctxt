@@ -2,10 +2,12 @@
 comment0.target=Main
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-comment2.params=primaryStage
-comment2.target=void\ start(javafx.stage.Stage)
+comment2.params=
+comment2.target=javafx.scene.Group\ createContent()
 comment3.params=arg0
 comment3.target=void\ handle(long)
-comment4.params=gc
-comment4.target=void\ tick(javafx.scene.canvas.GraphicsContext)
-numComments=5
+comment4.params=primaryStage
+comment4.target=void\ start(javafx.stage.Stage)
+comment5.params=gc
+comment5.target=void\ tick(javafx.scene.canvas.GraphicsContext)
+numComments=6

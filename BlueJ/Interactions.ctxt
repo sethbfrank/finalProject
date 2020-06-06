@@ -16,4 +16,6 @@ comment7.params=
 comment7.target=double\ getX()
 comment8.params=
 comment8.target=double\ getY()
-numComments=9
+comment9.params=
+comment9.target=void\ turnBlack()
+numComments=10

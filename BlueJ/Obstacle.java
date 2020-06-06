@@ -6,4 +6,3 @@ public class Obstacle extends Interactions {
         super(Main.blockSize, Main.blockSize, Color.WHITE, true);
     }
 }
-    

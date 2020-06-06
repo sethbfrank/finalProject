@@ -4,5 +4,5 @@ public class Apple extends Interactions {
     
     public Apple() {
         super(Main.blockSize, Main.blockSize, Color.RED, false);
-    }        
+    }
 }
